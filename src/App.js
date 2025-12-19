@@ -1,31 +1,36 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Person from './components/person';
+import MovieList from './components/MovieList/MovieList';
+import Filter from './components/Filter/Filter';
+import data from "./data"
+import { useState } from 'react';
 
-
-class App extends React.Component{
-constructor(){
-  super()
- this.state={
-    Person:{ fullName:"Mahdi",bio:"software developer", imgSrc:"", profession:"Instructor"},
-    shows:false,
-    count:0
+function App() {
+ 
+  const [movies, setmovies] = useState(data)
+ 
+  function search(title) {
+    setmovies([...data.filter(el=>el.title.toLowerCase().includes(title.toLowerCase()))])
+   
   }
-}
-componentDidMount(){
-  setInterval(() => this.setState(
-  { count:this.state.count+1}
-  ),  1000 )};
 
-render(){
-  return(
+  function filterbyrating(rating) {
+     setmovies([...data.filter(el=>el.rating===rating)])
+     if (rating===0) {
+      setmovies(data)
+     }
+     }
+  function addmovie(newmovie) {
+     setmovies([...movies,newmovie])
+  }
+  
+  return (
     <>
-    <p>{this.state.count}</p>
-      <Person  data={this.state} />
-      <button  onClick={()=>this.setState({shows:!this.state.shows})}>Toggle</button>
+    <Filter search={search} filterbyrating={filterbyrating}  addmovie={addmovie}/>
+    <MovieList data={movies}/>
     </>
   )
 }
-}
+
 export default App;
