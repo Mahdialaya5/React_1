@@ -1,19 +1,15 @@
 import React from 'react'
 import './Filter.css'
 import { Rating } from 'react-simple-star-rating';
-import { useState } from 'react';
+import { useRef } from 'react';
 
 
 function Filter({search,filterbyrating,addmovie}) {
 
-     const [newMovie, setnewMovie] = useState({
-        "id":Math.random()*10,
-        "title": "",
-        "description": "",
-        "posterUrl": "",
-        "rating":0,
-        "trailerSrc": ""
-     })
+     let title=useRef('')
+     let description=useRef('')
+     let posterUrl=useRef('')
+     let rating=useRef(0)
     const handleRating = (rate) => {
          filterbyrating(rate)
     }
@@ -23,16 +19,15 @@ function Filter({search,filterbyrating,addmovie}) {
       }
     const HandleSubmit=(e)=>{
         e.preventDefault()
-        addmovie(newMovie)
+        addmovie({"title":title.current.value,"description":description.current.value,"posterUrl":posterUrl.current.value,"rating":rating.current.value,id:Math.random()*10})
       }
   return (
     <div className='filter_container'>
         <form onSubmit={HandleSubmit} >
-            <input placeholder='title'  onChange={(e)=>setnewMovie({...newMovie,title:e.target.value})} />
-            <input placeholder='description' onChange={(e)=>setnewMovie({...newMovie,description:e.target.value})}/>
-            <input placeholder='rating' type='number' min={1} max={5}
-            onChange={(e)=>setnewMovie({...newMovie,rating:e.target.value})}/>
-            <input   onChange={(e)=>setnewMovie({...newMovie,posterUrl:e.target.value})}  />
+            <input placeholder='title'  ref={title} />
+            <input placeholder='description' ref={description}/>
+            <input placeholder='rating' type='number' min={1} max={5} ref={rating}/>
+            <input   ref={posterUrl} />
             <button type='submit'>Submit</button>
         </form>
      <input  placeholder='search'  type='text' 

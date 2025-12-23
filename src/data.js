@@ -24,7 +24,7 @@ const arr= [
         "trailerSrc": "https://www.youtube.com/embed/G4VmJcZR0Yg"
     },
     {
-       " id":3,
+       "id":"3",
         "title": "Appleseed Alpha",
         "description": "A young female soldier Deunan and her cyborg partner Briareos survive through the post World War 3 apocalyptic New York in search of human's future hope.",
         "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTgzMDY2Njc4Nl5BMl5BanBnXkFtZTgwNTEyMjUzMjE@._V1_FMjpg_UX1000_.jpg",
@@ -32,7 +32,7 @@ const arr= [
         "trailerSrc": "https://www.youtube.com/embed/4DtWCjogd1M"
     },
     {
-        id:4,
+       "id":"4",
         "title": "Resident Evil",
         "description": "Chris Redfield enlists the help of Leon S. Kennedy and Rebecca Chambers to stop a death merchant, with a vengeance, from spreading a deadly virus in New York.",
         "posterUrl": "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_ResidentEvil4_image1280w.jpg",
