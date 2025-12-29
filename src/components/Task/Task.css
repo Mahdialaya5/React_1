@@ -1,0 +1,14 @@
+.task{
+    height: 80px;
+    width: 60vw;
+    background-color: rgb(21, 21, 186);
+    color: white;
+    border-radius: 12px;
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+.fa-regular,.fa-solid{
+    cursor: pointer;
+}
