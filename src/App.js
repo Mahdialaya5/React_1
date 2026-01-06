@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TaskList from './components/TaskList/TaskList';
-import AddTask from './components/AddTask/AddTask';
+import UserList from './components/UserList/UserList';
+
 
 
 function App() {
@@ -10,8 +10,7 @@ function App() {
    return (
 
     <>
-    <TaskList/>
-   <AddTask/>
+  <UserList/>
      
     </>
  

@@ -1,0 +1,18 @@
+
+import Card from 'react-bootstrap/Card';
+
+function User({user}) {
+  return (
+    <Card style={{ width: '18rem' }}>
+      <Card.Body>
+        <Card.Title>{user.name}</Card.Title>
+        <Card.Text>
+         {user.phone}
+         {user.website}
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  );
+}
+
+export default User;
